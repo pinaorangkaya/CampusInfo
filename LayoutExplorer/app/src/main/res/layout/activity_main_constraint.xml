@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <include layout="@layout/header" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama: Syifaira Mofina"
+        android:textSize="20sp"
+        android:textColor="#1565C0"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIM: 105223007"
+        app:layout_constraintTop_toBottomOf="@id/tvNama"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button android:id="@+id/btnSatu" android:layout_width="0dp" android:layout_height="wrap_content" android:text="Simpan"
+        app:layout_constraintTop_toBottomOf="@id/tvNim"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnDua"
+        android:layout_marginTop="16dp" />
+
+    <Button android:id="@+id/btnDua" android:layout_width="0dp" android:layout_height="wrap_content" android:text="Edit"
+        app:layout_constraintTop_toTopOf="@id/btnSatu"
+        app:layout_constraintStart_toEndOf="@id/btnSatu"
+        app:layout_constraintEnd_toStartOf="@+id/btnTiga" />
+
+    <Button android:id="@+id/btnTiga" android:layout_width="0dp" android:layout_height="wrap_content" android:text="Hapus"
+        app:layout_constraintTop_toTopOf="@id/btnSatu"
+        app:layout_constraintStart_toEndOf="@id/btnDua"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/etPesan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ketik pesan di sini"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnSatu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnKirim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Kirim"
+        app:layout_constraintTop_toBottomOf="@id/etPesan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItems"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/btnKirim"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
